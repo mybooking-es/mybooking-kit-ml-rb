@@ -1,0 +1,85 @@
+            <!-- Search form -->
+            <div class="row">
+              <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <div class="form-search dark">
+                  <form action="/reserva/producto<%if session[:locale] && settings.default_locale != session[:locale]%>?lang=<%=session[:locale]%><%end%>" method="post">
+                    <div class="form-title">
+                      <i class="fa fa-globe"></i>
+                      <h2><%=t.front_end_reservation.search_title%></h2>
+                    </div>
+                    <div class="row row-inputs">
+                      <div class="container-fluid">
+                        <div class="col-sm-6">
+                          <div class="form-group has-icon has-label">
+                            <label for="pickup_place"><%=t.front_end_reservation.pickup_place%></label>
+                            <select name="pickup_place" id="pickup_place"
+                                class="selectpicker input-price" data-live-search="true" data-width="100%"
+                                data-toggle="tooltip" title="Select" data-container="body">
+                            </select>
+                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group has-icon has-label">
+                            <label for="date_from"><%=t.front_end_reservation.date_from%></label>
+                            <input type="text" class="form-control" id="date_from" name="date_from" placeholder="dd/mm/yyyy">
+                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group has-icon has-label selectpicker-wrapper">
+                            <label><%=t.front_end_reservation.time_from%></label>
+                            <select name="time_from" id="time_from"
+                                class="selectpicker input-price" data-live-search="true" data-width="100%"
+                                data-toggle="tooltip" title="Select" data-container="body">
+                            </select>
+                            <span class="form-control-icon"><i class="fa fa-clock-o"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row row-inputs">
+                      <div class="container-fluid">
+                        <div class="col-sm-6">
+                          <div class="form-group has-icon has-label">
+                            <label for="return_place"><%=t.front_end_reservation.return_place%></label>
+                            <select name="return_place" id="return_place"
+                                class="selectpicker input-price" data-live-search="true" data-width="100%"
+                                data-toggle="tooltip" title="Select" data-container="body">
+                            </select>
+                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group has-icon has-label">
+                            <label for="date_to"><%=t.front_end_reservation.date_to%></label>
+                            <input type="text" class="form-control" id="date_to" name="date_to" placeholder="dd/mm/yyyy">
+                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group has-icon has-label selectpicker-wrapper">
+                            <label><%=t.front_end_reservation.time_to%></label>
+                            <select name="time_to" id="time_to"
+                               class="selectpicker input-price" data-live-search="true" data-width="100%"
+                               data-toggle="tooltip" title="Select" data-container="body">
+                            </select>
+                            <span class="form-control-icon"><i class="fa fa-clock-o"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row row-submit">
+                      <div class="container-fluid">
+                        <div class="inner">
+                           <button type="submit" id="formSearchSubmit" class="btn btn-submit btn-theme pull-right"><%=t.front_end_reservation.search_button%></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /Search form -->

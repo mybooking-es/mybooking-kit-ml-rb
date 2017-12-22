@@ -1,0 +1,125 @@
+        <!-- PAGE WITH SIDEBAR -->
+        <section id="page_choose_product" class="page-section with-sidebar sub-page">
+            <div class="container">
+                <div class="row">
+                    <!-- CONTENT -->
+                    <div class="col-md-9 content car-listing" id="content">
+
+                        <!-- Car Listing -->
+                        <div id="product_listing">
+                        </div>    
+                        
+
+                    </div>
+                    <!-- /CONTENT -->
+
+                    <!-- SIDEBAR -->
+                    <aside class="col-md-3 sidebar" id="sidebar" style="display: none">
+                        <!-- widget -->
+                        <div class="widget shadow widget-find-car">
+                            <h4 class="widget-title"><%=t.front_end_reservation.reservation_summary_title%></h4>
+                            <div class="widget-content">
+                                <!-- Search form -->
+                                <div class="form-search light">
+                                    <form action="/reserva/producto<%if session[:locale] && settings.default_locale != session[:locale]%>?lang=<%=session[:locale]%><%end%>" method="POST">
+
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchUpLocation3"><%=t.front_end_reservation.pickup_place%></label>
+                                                <select name="pickup_place" id="pickup_place"
+                                                      class="selectpicker input-price" data-live-search="true" data-width="100%"
+                                                    data-toggle="tooltip" title="Select"  data-container="body">
+                                                </select>
+                                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                        </div>
+
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchOffLocation3"><%=t.front_end_reservation.return_place%></label>
+                                            <select name="return_place" id="return_place"
+                                                class="selectpicker input-price" data-live-search="true" data-width="100%"
+                                                data-toggle="tooltip" title="Select" data-container="body">
+                                            </select>
+                                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                        </div>
+
+                                        <div class="form-group has-icon has-label">
+                                            <label for="date_from"><%=t.front_end_reservation.date_from%></label>
+                                            <input type="text" class="form-control" id="date_from" name="date_from" placeholder="dd/mm/yyyy">
+                                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+
+                                        <div class="form-group has-icon has-label selectpicker-wrapper">
+                                            <label><%=t.front_end_reservation.time_from%></label>
+                                            <select
+                                                    class="selectpicker input-price" data-live-search="true" data-width="100%" id="time_from" name="time_from"
+                                                    data-toggle="tooltip" title="Select" data-container="body">
+                                            </select>
+                                            <span class="form-control-icon"><i class="fa fa-clock-o"></i></span>
+                                        </div>
+
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchUpDate3"><%=t.front_end_reservation.date_to%></label>
+                                            <input type="text" class="form-control" id="date_to" name="date_to" placeholder="dd/mm/yyyy">
+                                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+
+                                        <div class="form-group has-icon has-label selectpicker-wrapper">
+                                            <label><%=t.front_end_reservation.time_to%></label>
+                                            <select
+                                                    class="selectpicker input-price" data-live-search="true" data-width="100%" id="time_to" name="time_to"
+                                                    data-toggle="tooltip" title="Select" data-container="body">
+                                            </select>
+                                            <span class="form-control-icon"><i class="fa fa-clock-o"></i></span>
+                                        </div>
+
+                                        <button type="submit" id="formSearchSubmit3" class="btn btn-submit btn-theme btn-theme-dark btn-block"><%=t.front_end_reservation.update%></button>
+
+                                    </form>
+                                </div>
+                                <!-- /Search form -->
+                            </div>
+                        </div>
+                        <!-- /widget -->
+                        <!-- widget helping center -->
+                        <div class="widget shadow widget-helping-center" style="display: none">
+                            <h4 class="widget-title">Atención al cliente</h4>
+                            <div class="widget-content">
+                                <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
+                                <h5 class="widget-title-sub">+34 666 10 10 10</h5>
+                                <p><a href="mailto:support@supportcenter.com">support@mybooking.es</a></p>
+                                <div class="button">
+                                    <a href="#" class="btn btn-block btn-theme btn-theme-dark">Centro de soporte</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /widget helping center -->
+                    </aside>
+                    <!-- /SIDEBAR -->
+
+                </div>
+            </div>
+        </section>
+        <!-- /PAGE WITH SIDEBAR -->
+
+        <script type="text/tpml" id="script_detailed_product">
+
+            <div class="thumbnail no-border no-padding thumbnail-car-card clearfix">
+               <div class="media">
+                  <img src="<%%=product.photo%>" style="min-height:202px" alt=""/>
+               </div>
+               <div class="caption">
+                  <h4 class="caption-title"><%%=product.name%></h4>
+                  <h5 class="caption-title-sub"><%%=new Number(product.price).toFixed(2)%>€</h5>
+                  <div class="caption-text"><%%=product.short_description%></div>
+                  <table class="table">
+                     <tr>
+                       <%% if (product.availability) { %>
+                       <td class="buttons"><a class="btn btn-theme btn-choose-product" href="#" data-product="<%%=product.code%>"><%=t.front_end_reservation.select%></a></td>
+                       <%% } else { %>
+                       <td class="not-available"><%=t.front_end_reservation.not_available%></td> 
+                       <%% } %>
+                     </tr>
+                  </table>
+                </div>
+              </div>
+
+        </script>

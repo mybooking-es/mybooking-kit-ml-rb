@@ -1,0 +1,254 @@
+<!-- PAGE WITH SIDEBAR -->
+<section id="page_summary" class="page-section with-sidebar sub-page">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h2 id="reservation_title" class="text-center"></h2>  
+
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- CONTENT -->
+      <div class="col-md-8 content" id="content" style="display:none">
+
+        <!-- Product -->
+        <div id="selected_product">
+        </div>
+
+        <hr class="page-divider half transparent"/>
+
+        <!-- Extras -->
+        <div id="selected_extras">
+        </div>
+
+        <hr class="page-divider half transparent"/>
+        
+        <!-- Customer data -->
+        <div id="customer_data">
+        </div> 
+
+        <!-- Payment -->
+        <div id="payment_detail">
+        </div>           
+
+      </div>
+      <!-- /CONTENT -->
+
+      <!-- SIDEBAR -->
+      <aside class="col-md-4 sidebar" id="sidebar" style="display:none">
+        <!-- widget detail reservation -->
+        <div class="widget shadow widget-details-reservation">
+          <div id="reservation_detail">
+          </div>
+        </div>
+      </aside>
+      <!-- /SIDEBAR -->
+    </div>
+  </div>
+</section>
+<!-- /PAGE WITH SIDEBAR -->
+
+<script type="text/tpml" id="script_product_detail">
+
+    <h3 class="block-title alt">
+      <i class="fa fa-angle-down"></i><%=t.front_end_reservation.booking_detail_product_title%>
+    </h3>
+    <div class="car-big-card alt">
+      <div class="row">
+        <div class="col-md-8">
+          <div>
+            <div class="item">
+              <img class="img-responsive" src="<%%=product.full_photo%>" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="car-details">
+             <div class="list">
+                <ul>
+                  <li class="title">
+                    <h2><%%=product.name%></h2>
+                  </li>
+                  <%%=product.description%>
+                </ul>
+             </div>
+             <div class="price">
+                <strong><%%=new Number(booking.item_cost).toFixed(2)%></strong>€ <i class="fa fa-info-circle"></i>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+</script>
+
+<!-- Script used to render an extra -->
+
+<script type="text/template" id="script_extras_detail">
+
+        <h3 class="block-title alt">
+          <i class="fa fa-angle-down"></i><%=t.front_end_reservation.booking_detail_extras_title%>
+        </h3>
+        <div class="car-big-card alt">
+          <div class="row">
+            <%% for (var idx=0;idx<booking.booking_extras.length;idx++) { %>
+            <div class="col-md-12">
+               <div class="car-details">
+                  <div class="block-title">
+                     <h2 style="text-align:center"><%%=booking.booking_extras[idx].extra_description%></h2>
+                  </div>
+                  <div class="price" style="text-align:right">
+                    <%% if (booking.booking_extras[idx].quantity > 1) {%>
+                      <small><%%=booking.booking_extras[idx].quantity%> x <%%= new Number(booking.booking_extras[idx].extra_unit_cost).toFixed(2)%>€</small> &nbsp; &nbsp;
+                    <%% } %>
+                    <strong><%%= new Number(booking.booking_extras[idx].extra_cost).toFixed(2)%></strong>€ <i class="fa fa-info-circle"></i>
+                  </div>
+               </div>
+            </div>
+            <%% } %>
+          </div>  
+        </div>
+</script>
+
+<!-- Script used to render the reservation customer -->
+
+<script type="text/tpml" id="script_customer_data">
+
+    <h3 class="block-title alt">
+      <i class="fa fa-angle-down"></i><%=t.front_end_reservation.booking_detail_customer_title%>
+    </h3>
+
+    <div class="form-delivery">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <div class="form-control alt">
+                  <strong><%=t.front_end_reservation.booking_detail_customer_name%></strong>
+                  <div><%%=booking.customer_name%> <%%=booking.customer_surname%></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <div class="form-control alt">
+                  <strong><%=t.front_end_reservation.booking_detail_customer_email%></strong>
+                  <p><%%=booking.customer_email%></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <div class="form-control alt">
+                  <strong><%=t.front_end_reservation.booking_detail_customer_phone_number%></strong>
+                  <p><%%=booking.customer_phone%> <%%=booking.customer_mobile_phone%></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</script>  
+
+
+<!-- Script used to render the reservation summary -->
+
+<script type="text/tmpl" id="script_reservation_summary">
+    <span></span>
+    <h4 class="widget-title"><%=t.front_end_reservation.reservation_summary_title%></h4>
+    <div class="widget-content">
+       <h5 class="widget-title-sub"><%=t.front_end_reservation.reservation_summary_pickup%></h5>
+       <div class="media">
+          <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
+          <div class="media-body"><p><%%=booking.date_from_full_format%> / <%%=booking.time_from%></p></div>
+       </div>
+       <div class="media">
+          <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
+          <div class="media-body"><p><%%=booking.pickup_place_customer_translation%></p></div>
+       </div>
+       <h5 class="widget-title-sub"><%=t.front_end_reservation.reservation_summary_return%></h5>
+       <div class="media">
+         <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
+         <div class="media-body"><p><%%=booking.date_to_full_format%>  / <%%=booking.time_to%></p></div>
+       </div>
+       <div class="media">
+         <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
+         <div class="media-body"><p><%%=booking.return_place_customer_translation%></p></div>
+       </div>
+       <h5 class="widget-title-sub"><%=t.front_end_reservation.reservation_summary_price%></h5>
+       <div class="list">
+          <ul>
+            <li><%=t.front_end_reservation.reservation_summary_total_product%>: <span class="pull-right"><%%=new Number(booking.item_cost).toFixed(2)%>€</span></li>
+
+            <%% if (booking.extras_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_total_extras%>: <span class="pull-right"><%%=new Number(booking.extras_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (booking.time_from_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_pickup_time_supplement%>: <span class="pull-right"><%%=new Number(booking.time_from_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (booking.pickup_place_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_pickup_place_supplement%>: <span class="pull-right"><%%=new Number(booking.pickup_place_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (booking.time_to_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_return_time_supplement%>: <span class="pull-right"><%%=new Number(booking.time_to_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (booking.return_place_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_return_place_supplement%>: <span class="pull-right"><%%=new Number(booking.return_place_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <li><%=t.front_end_reservation.reservation_summary_total%>: <span class="pull-right"><%%=new Number(booking.total_cost).toFixed(2)%>€</span></li>
+          </ul>
+       </div>
+
+    </div>
+</script> 
+<!-- Script payment -->
+<script type="text/tmpl" id="script_payment_detail">
+    <h3 class="block-title alt"><i class="fa fa-angle-down"></i><%=t.front_end_reservation.payment_title%></h3>
+    <div class="alert alert-success">
+      <p><%=t.front_end_reservation.payment_to_confirm_reservation(20)%></p>
+    </div>
+    <div class="panel-group payments-options" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" data-payment-method="redsys256" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapseThree">
+              <span class="dot"></span> <%=t.front_end_reservation.credit_card_payment(20)%>
+            </a>
+            <span class="overflowed pull-right">
+              <!--img src="assets/img/preview/payments/mastercard-2.jpg" alt=""/>
+              <img src="assets/img/preview/payments/visa-2.jpg" alt=""/>
+              <img src="assets/img/preview/payments/american-express-2.jpg" alt=""/>
+              <img src="assets/img/preview/payments/discovery-2.jpg" alt=""/>
+              <img src="assets/img/preview/payments/eheck-2.jpg" alt=""/-->
+            </span>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3"></div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading4">
+          <h4 class="panel-title">
+            <a class="collapsed" data-payment-method="paypal_standard" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              <span class="dot"></span> <%=t.front_end_reservation.paypal_payment(20)%>
+            </a>
+            <span class="overflowed pull-right">
+              <!--img src="assets/img/preview/payments/paypal-2.jpg" alt=""/-->
+            </span>
+          </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4"></div>
+      </div>
+    </div>
+    <div class="overflowed reservation-now">
+      <div>
+        <a id="btn_pay" class="btn btn-theme pull-right btn-reservation-now" href="#"><%=t.front_end_reservaiton.pay%></a>
+      </div>
+    </div>    
+</script>  

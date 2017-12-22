@@ -1,0 +1,77 @@
+front_end_reservation:
+  home: Inici
+  conditions: Condicions
+  choose_product_page_title: Seleccionar producte
+  choose_products_page_title: Seleccionar productes
+  complete_reservation_page_title: Completar dades
+  summary_page_title: Reserva
+  conditions_page_title: Condicions
+  contact_page_title: Contacte
+  search_title: Cercar
+  search_button: Cerca
+  pickup_place: Punt de lliurament
+  date_from: Data de lliurament
+  time_from: Hora de lliurament
+  return_place: Punt de devolució
+  date_to: Data de devolució
+  time_to: Hora de devolució
+  driver_age: Edat del conductor
+  update: Actualitzar
+  product: Producte
+  select: Seleccionar
+  next: Següent
+  extras_title: Extras
+  customer_title: Informació del client
+  not_available: No disponible
+  field_customer_name: Nom
+  field_customer_name_mandatory: El nom és obligatori
+  field_customer_surname: Cognoms
+  field_customer_surname_mandatory: Els cognoms són obligatoris
+  field_customer_email: Correu electrònic
+  field_customer_email_mandatory: El correu electrònic és obligatori
+  field_customer_email_confirm: Confirmar correu electònic
+  field_customer_main_phone_number: Telèfon
+  field_customer_alternative_phone_number: Telèfon alternatiu
+  additional_information_title: Informació adicional
+  field_comments: Comentaris
+  payment_title: Pagament
+  payment_to_confirm_reservation: Per confirmar la reserva es requereix una paga i senyal del %1% de l'import de la reserva
+  conditions_read: He llegit i accepto <a href="%1" target="blank">les condicions de lloguer</a>
+  request_reservation: Sol.licitar reserva
+  credit_card_payment: Targeta de crèdit (es requereix una paga i senyal del %1% per confirmar la reserva)
+  paypal_payment: PayPal (es requereix una paga i senyal del %1% per confirmar la reserva)
+  conditions_not_read: Ho sentim. No ha marcat que ha llegit les condicions de lloguer
+  form_errors: Si us plau, revisi el formulari. Conté dades invàlides.
+  product_information_title: Informació del producte
+  products_information_title: Informació dels productes
+  reservation_summary_title: Detall de la reserva
+  reservation_summary_pickup: Lliurament
+  reservation_summary_return: Devolució
+  reservation_summary_price: Preu
+  reservation_summary_total_product: Total producte
+  reservation_summary_total_extras: Total extras
+  reservation_summary_pickup_place_supplement: Suplement punt de lliurament
+  reservation_summary_pickup_time_supplement: Suplement hora de lliurament
+  reservation_summary_return_place_supplement: Suplement punt de devolució
+  reservation_summary_return_time_supplement: Suplement hora de devolució
+  reservation_summary_total: Total
+  reservation_summary_deposit: Fiança
+  reservation_summary_deposit_detail: La fiança es retornarà després de la devolució del producte
+  modify_the_reservation: Modificar reserva
+  booking_detail_title: la seva reserva %1
+  booking_detail_state:
+    pending_confirmation: està pendent de confirmació
+    confirming: està sent confirmada
+    confirmed: està confirmada
+    in_progress: està en curs
+    done: està finalitzada
+    cancelled: està cancel.lada
+  booking_detail_product_title: Producte contractat
+  booking_detail_extras_title: Extras
+  booking_detail_customer_title: Dades del client
+  booking_detail_customer_name: Nom
+  booking_detail_customer_phone_number: Telèfon(s)
+  booking_detail_customer_email: Correu electric
+  booking_detail_summary_paid: Pagat
+  booking_detail_summary_pending: Pendent
+  pay: Pagar

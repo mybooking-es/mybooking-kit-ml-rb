@@ -1,0 +1,77 @@
+front_end_reservation:
+  home: Inizio
+  conditions: Termini e condizioni
+  choose_product_page_title: Selezionare prodotto
+  choose_products_page_title: Selezionare produrre
+  complete_reservation_page_title: Completare i dati
+  summary_page_title: Prenotazione
+  conditions_page_title: Termini e condizioni
+  contact_page_title: Contacte
+  search_title: Cerca
+  search_button: Cerca
+  pickup_place: Luogo ritiro
+  date_from: Data ritiro
+  time_from: Ora ritiro
+  return_place: Luogo riconsegna
+  date_to: Data riconsegna
+  time_to: Ora riconsegna
+  driver_age: Età del conducente
+  update: Aggiornare
+  product: Prodotto
+  select: Selezionare
+  next: Successivo
+  extras_title: Extra
+  customer_title: Dati del cliente
+  not_available: Non disponibile
+  field_customer_name: Nome
+  field_customer_name_mandatory: È obbligatorio inserire il nome
+  field_customer_surname: Cognome
+  field_customer_surname_mandatory: È obbligatorio inserire il cognome
+  field_customer_email: E-mail
+  field_customer_email_mandatory: È obbligatorio inserire l'e-mail
+  field_customer_email_confirm: Confermare e-mail
+  field_customer_main_phone_number: Telefono
+  field_customer_alternative_phone_number: Telefono alternativo
+  additional_information_title: Ulteriori informazioni
+  field_comments: Commenti
+  payment_title: Pagamento
+  payment_to_confirm_reservation: Per confermare la prenotazione è necessario effettuare un pagamento pari al %1% del costo totale della prenotazione
+  conditions_read: Ho letto e accetto <a href="%1" target="blank">i termini e le condizioni generali di noleggio</a>
+  request_reservation: Effettuare la prenotazione
+  credit_card_payment: Credit card (a deposit of %1% is required to confirm the reservation)
+  paypal_payment: PayPal (a deposit of %1% is required to confirm the reservation)
+  conditions_not_read: Lo sentimos. No ha marcado que ha leído las condiciones de alquiler
+  form_errors: Por favor, revise el formulario. Contiene datos no válidos.
+  product_information_title: Informazioni sul prodotto
+  products_information_title: Informazioni sul produrre
+  reservation_summary_title: Dettagli sulla prenotazione
+  reservation_summary_pickup: Ritiro
+  reservation_summary_return: Riconsegna
+  reservation_summary_price: Prezzo
+  reservation_summary_total_product: Totale prodotto
+  reservation_summary_total_extras: Totale extra
+  reservation_summary_pickup_place_supplement: Supplemento luogo di ritiro
+  reservation_summary_pickup_time_supplement: Supplemento orario di ritiro
+  reservation_summary_return_place_supplement: Supplemento luogo di riconsegna
+  reservation_summary_return_time_supplement: Supplemento orario di riconsegna
+  reservation_summary_total: Totale
+  reservation_summary_deposit: Deposito cauzionale
+  reservation_summary_deposit_detail: Il deposito cauzionale verrà restituito alla riconsegna del prodotto
+  modify_the_reservation: Modifica prenotazione
+  booking_detail_title: la sua prenotazione %1
+  booking_detail_state:
+    pending_confirmation: non è stata ancora confermata
+    confirming: si sta confermando
+    confirmed: è confermata
+    in_progress: è in corso
+    done: è finalizzato
+    cancelled: è cancellata
+  booking_detail_product_title: Prodotto prenotato
+  booking_detail_extras_title: Extra
+  booking_detail_customer_title: Dati del cliente
+  booking_detail_customer_name: Nome
+  booking_detail_customer_phone_number: Numeri di telefono
+  booking_detail_customer_email: E-mail
+  booking_detail_summary_paid: Pagato
+  booking_detail_summary_pending: Da pagare
+  pay: Pagare

@@ -1,0 +1,77 @@
+front_end_reservation:
+  home: Home
+  conditions: Terms & Conditions
+  choose_product_page_title: Select product
+  choose_products_page_title: Select products
+  complete_reservation_page_title: Fill in data
+  summary_page_title: Reservation %1
+  conditions_page_title: Terms & conditions
+  contact_page_title: Contact
+  search_title: Find
+  search_button: Find
+  pickup_place: Pick-up location
+  date_from: Pick-up Date
+  time_from: Pick-up Time
+  return_place: Return location
+  date_to: Return Date
+  time_to: Return Time
+  driver_age: Driver's age
+  update: Update
+  product: Product
+  select: Select
+  next: Next
+  extras_title: Extras
+  customer_title: Client information
+  not_available: Not available
+  field_customer_name: Name
+  field_customer_name_mandatory: Name is required
+  field_customer_surname: Surname
+  field_customer_surname_mandatory: Surname is required
+  field_customer_email: E-mail
+  field_customer_email_mandatory: E-mail is required
+  field_customer_email_confirm: Confirm e-mail
+  field_customer_main_phone_number: Phone number
+  field_customer_alternative_phone_number: Alternative phone number
+  additional_information_title: Additional information
+  field_comments: Comments
+  payment_title: Pay
+  payment_to_confirm_reservation: To confirm the reservation a %1% deposit is required
+  conditions_read: I've read and accept <a href="%1" target="blank">the general terms and conditions</a>
+  request_reservation: Request reservation
+  credit_card_payment: Credit card (to confirm booking a %1% deposit is required)
+  paypal_payment: PayPal (to confirm booking a %1% deposit is required)
+  conditions_not_read: We\'re sorry. You haven't agreed with our rental terms
+  form_errors: Please, check the form. It contains invalid data.
+  product_information_title: Product information
+  products_information_title: Products information
+  reservation_summary_title: Booking details
+  reservation_summary_pickup: Pick-up
+  reservation_summary_return: Return
+  reservation_summary_price: Price
+  reservation_summary_total_product: Product total
+  reservation_summary_total_extras: Extras total
+  reservation_summary_pickup_place_supplement: Pick up place supplement
+  reservation_summary_pickup_time_supplement: Pick up time supplement
+  reservation_summary_return_place_supplement: Return place supplement
+  reservation_summary_return_time_supplement: Return time supplement
+  reservation_summary_total: Total
+  reservation_summary_deposit: Deposit
+  reservation_summary_deposit_detail: The deposit will be returned after product drop-off
+  modify_the_reservation: Modify reservation
+  booking_detail_title: your reservation %1
+  booking_detail_state:
+    pending_confirmation: is pending
+    confirming: is being confirmed
+    confirmed: has been confirmed
+    in_progress: is in progress
+    done: is finalized
+    cancelled: is cancelled
+  booking_detail_product_title: Booked product
+  booking_detail_extras_title: Extras
+  booking_detail_customer_title: Client information
+  booking_detail_customer_name: Name
+  booking_detail_customer_phone_number: Telephone number(s)
+  booking_detail_customer_email: E-mail
+  booking_detail_summary_paid: Paid
+  booking_detail_summary_pending: To be paid
+  pay: Pay

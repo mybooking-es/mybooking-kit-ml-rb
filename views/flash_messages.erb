@@ -1,0 +1,7 @@
+    <% [:message, :error, :warning, :notice]. each do |message| %>        
+        <% if defined?(flash) and flash[message] %>
+          <div id="flash-<%= message %>" class="flash flash-<%=message%>">
+              <%= flash[message] %>
+          </div>
+        <% end %>
+    <% end  %>

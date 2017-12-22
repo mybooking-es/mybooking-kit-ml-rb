@@ -1,0 +1,50 @@
+/**
+ ** 12-Theme update
+ **
+ **/
+.booking-selector {
+    background-image: url(http://eazzy.me/html/rentit-onepage/assets/img/preview/slider/slide-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form-extras .select {
+    margin-bottom: 15px
+}
+
+.form-extras .select label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-right: 5px;
+    line-height: 18px;
+    padding-left: 15px;
+    color: #7f7f7f;
+    font-weight: 400;
+}
+.extra-select {
+    width:120px !important;
+}
+#form-reservation .form-group {
+    min-height: 80px
+}
+.form-reservation-error {
+    color: rgba(230, 0, 0, 0.5);
+}
+#reservation_error {
+    margin-top: 20px;
+}
+.car-listing .thumbnail-car-card  .table td.not-available {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  color: #e60000;
+}
+@media screen and (min-width: 768px) {
+  .car-listing .thumbnail-car-card  .table td a.btn-choose-product {
+    display: inline-block;
+    width: 50%;
+    float: right;
+  }
+}

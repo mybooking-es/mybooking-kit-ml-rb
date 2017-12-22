@@ -1,0 +1,320 @@
+        <!-- PAGE WITH SIDEBAR -->
+        <section class="page-section with-sidebar sub-page">
+            <div class="container">
+                <div class="row">
+                    <!-- CONTENT -->
+                    <div class="col-md-8 content" id="content" style="display: none">
+
+                        <!-- Product -->
+                        <div id="selected_product">
+                        </div>
+
+                        <hr class="page-divider half transparent"/>
+
+                        <!-- Extras -->
+
+                        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><%=t.front_end_reservation.extras_title%></h3>
+                        <form role="form" class="form-extras">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="left">
+                                        <div id="extras_listing">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                        <!-- Customer -->
+
+                        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><%=t.front_end_reservation.customer_title%></h3>
+                        <form id="form-reservation" name="reservation_form" class="form-delivery" method="post">
+                            <input type="hidden" name="customer_language" value="<%=session[:locale]%>"/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input name="customer_name" id="customer_name" title="<%=t.front_end_reservation.field_customer_name_mandatory%>" data-toggle="tooltip"
+                                                class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_name%>:*">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <input name="customer_surname" id="customer_surname" title="<%=t.front_end_reservation.field_customer_surname_mandatory%>" data-toggle="tooltip"
+                                         class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_surname%>:*">
+                                  </div>
+                                </div>
+                                <div class="col-md-6 clearfix">
+                                    <div class="form-group">
+                                        <input name="customer_email" id="customer_email" title="<%=t.front_end_reservation.field_customer_email_mandatory%>" data-toggle="tooltip"
+                                                class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_email%>:*">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <input name="confirm_customer_email" id="confirm_customer_email" title="<%=t.front_end_reservation.field_customer_email_mandatory%>" data-toggle="tooltip"
+                                         class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_email_confirm%>:*">
+                                  </div>
+                                </div>
+                                <div class="col-md-6 clearfix">
+                                    <div class="form-group">
+                                     <input name="customer_phone" class="form-control alt" type="text"
+                                            placeholder="<%=t.front_end_reservation.field_customer_main_phone_number%>:*">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input name="customer_mobile_phone" class="form-control alt" type="text"
+                                             placeholder="<%=t.front_end_reservation.field_customer_alternative_phone_number%>:">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Additional information -->
+                        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><%=t.front_end_reservation.additional_information_title%></h3>
+                        <form action="#" class="form-additional">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                  <textarea name="comments" id="comments"
+                                     class="form-control alt" placeholder="<%=t.front_end_reservation.field_comments%>" cols="30" rows="10"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+
+                        <!-- Payment -->
+                        <div id="payment_detail">
+                        </div>  
+
+                        <!-- Reservation buttons -->
+
+                        <div class="overflowed reservation-now">
+                            <div>
+                              <div class="checkbox pull-left">
+                                <input id="accept" type="checkbox" name="fd-name" title="Please accept" data-toggle="tooltip">
+                                <label for="accept"><%if session[:locale] and session[:locale]!=settings.default_locale%>
+                                                     <%=t.front_end_reservation.conditions_read("/condiciones?lang=#{session[:locale]}")%>
+                                                    <%else%><%=t.front_end_reservation.conditions_read("/condiciones")%><%end%></label>
+                              </div>
+                              <a id="btn_reservation" class="btn btn-theme pull-right btn-reservation-now" href="#"><%=t.front_end_reservation.request_reservation%></a>
+                            </div>
+                        </div>
+
+                        <div id="reservation_error" class="alert alert-danger" style="display:none">
+                        </div>
+
+                    </div>
+                    <!-- /CONTENT -->
+
+                    <!-- SIDEBAR -->
+                    <aside class="col-md-4 sidebar" id="sidebar" style="display: none">
+                        <!-- widget detail reservation -->
+                        <div class="widget shadow widget-details-reservation">
+                            <div id="reservation_detail">
+                            </div>
+                        </div>
+                        <!-- /widget detail reservation -->
+
+                        <!-- widget helping center -->
+                        <!--div class="widget shadow widget-helping-center" style="display:none">
+                            <h4 class="widget-title">Atención al cliente</h4>
+                            <div class="widget-content">
+                                <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
+                                <h5 class="widget-title-sub">+34 666 10 10 10</h5>
+                                <p><a href="mailto:support@supportcenter.com">support@mybooking.es</a></p>
+                                <div class="button">
+                                    <a href="#" class="btn btn-block btn-theme btn-theme-dark">Centro de soporte</a>
+                                </div>
+                            </div>
+                        </div-->
+                        <!-- /widget helping center -->
+                    </aside>
+                    <!-- /SIDEBAR -->
+
+                </div>
+            </div>
+        </section>
+        <!-- /PAGE WITH SIDEBAR -->
+
+<script type="text/tpml" id="script_product_detail">
+
+    <h3 class="block-title alt">
+      <i class="fa fa-angle-down"></i><%=t.front_end_reservation.product_information_title%>
+    </h3>
+    <div class="car-big-card alt">
+      <div class="row">
+        <div class="col-md-8">
+          <div>
+            <div class="item">
+              <img class="img-responsive" src="<%%=product.full_photo%>" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="car-details">
+             <div class="list">
+                <ul>
+                  <li class="title">
+                    <h2><%%=product.name%></h2>
+                  </li>
+                  <%%=product.description%>
+                </ul>
+             </div>
+             <div class="price">
+                <strong><%%=new Number(shopping_cart.item_cost).toFixed(2)%></strong>€ <i class="fa fa-info-circle"></i>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+</script>
+
+<!-- Script used to render an extra -->
+
+<script type="text/template" id="script_detailed_extra">
+
+    <%% if (extra.max_quantity > 1) { %>
+    <div class="select">
+      <label for="select<%%=extra.code%>"><%%=extra.name%></label>
+      <select name="select<%%=extra.code%>" id="select<%%=extra.code%>"
+            class="selectpicker input extra-select pull-right" data-live-search="false" data-width="100%"
+            data-toggle="tooltip" title="Select" data-value="<%%=extra.code%>">
+        <%% for (var idx=0;idx<=extra.max_quantity;idx++) { %>
+        <option value="<%%=idx%>"
+          <%% if (extrasInShoppingCart[extra.code] && extrasInShoppingCart[extra.code] == idx) { %>
+            selected="selected"
+           <%%}%> >
+              <%%=idx%> un. <%%if (idx>0){%>(<%%=new Number(extra.unit_price*idx).toFixed(2)%>€)<%%}%>
+        </option>
+        <%% } %>
+      </select>
+    </div>
+    <%% } else if (extra.max_quantity == 1) { %>
+    <div class="checkbox checkbox-danger">
+      <input id="checkboxl<%%=extra.code%>" type="checkbox" class="extra-checkbox" data-value="<%%=extra.code%>" <%% if (extrasInShoppingCart[extra.code] &&  extrasInShoppingCart[extra.code] > 0) { %> checked="checked" <%% } %>/>
+      <label for="checkboxl<%%=extra.code%>">
+      <%%=extra.name%> <span class="pull-right"> <%%=new Number(extra.unit_price).toFixed(2)%> € </span>
+      </label>
+    </div>
+    <%% } %>
+
+</script>
+
+<!-- Script used to render the reservation summary -->
+
+<script type="text/tmpl" id="script_reservation_summary">
+    <span></span>
+    <h4 class="widget-title"><%=t.front_end_reservation.reservation_summary_title%></h4>
+    <div class="widget-content">
+       <h5 class="widget-title-sub"><%=t.front_end_reservation.reservation_summary_pickup%></h5>
+       <div class="media">
+          <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
+          <div class="media-body"><p><%%=shopping_cart.date_from_full_format%> / <%%=shopping_cart.time_from%></p></div>
+       </div>
+       <div class="media">
+          <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
+          <div class="media-body"><p><%%=shopping_cart.pickup_place_customer_translation%></p></div>
+       </div>
+       <h5 class="widget-title-sub"><%=t.front_end_reservation.reservation_summary_return%></h5>
+       <div class="media">
+         <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
+         <div class="media-body"><p><%%=shopping_cart.date_to_full_format%> / <%%=shopping_cart.time_to%></p></div>
+       </div>
+       <div class="media">
+         <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
+         <div class="media-body"><p><%%=shopping_cart.return_place_customer_translation%></p></div>
+       </div>
+       <h5 class="widget-title-sub"><%=t.front_end_reservation.reservation_summary_price%></h5>
+       <div class="list">
+          <ul>
+            <li><%=t.front_end_reservation.reservation_summary_total_product%>: <span class="pull-right"><%%=new Number(shopping_cart.item_cost).toFixed(2)%>€</span></li>
+
+            <%% if (shopping_cart.extras_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_total_extras%>: <span class="pull-right"><%%=new Number(shopping_cart.extras_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (shopping_cart.time_from_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_pickup_time_supplement%>: <span class="pull-right"><%%=new Number(shopping_cart.time_from_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (shopping_cart.pickup_place_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_pickup_place_supplement%>: <span class="pull-right"><%%=new Number(shopping_cart.pickup_place_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (shopping_cart.time_to_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_return_time_supplement%>: <span class="pull-right"><%%=new Number(shopping_cart.time_to_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <%% if (shopping_cart.return_place_cost > 0) { %>
+            <li><%=t.front_end_reservation.reservation_summary_return_place_supplement%>: <span class="pull-right"><%%=new Number(shopping_cart.return_place_cost).toFixed(2)%>€</span></li>
+            <%% } %>
+
+            <li><%=t.front_end_reservation.reservation_summary_total%>: <span class="pull-right"><%%=new Number(shopping_cart.total_cost).toFixed(2)%>€</span></li>
+          </ul>
+       </div>
+
+       <div class="button">
+         <a href="/reserva/producto" class="btn btn-block btn-theme btn-theme-dark"><%=t.front_end_reservation.modify_the_reservation%></a>
+       </div>
+    </div>
+</script>
+
+<!-- Script payment -->
+<script type="text/tmpl" id="script_payment_detail">
+                        <h3 class="block-title alt"><i class="fa fa-angle-down"></i><%=t.front_end_reservation.payment_title%></h3>
+                        <div class="alert alert-success">
+                          <p><%=t.front_end_reservation.payment_to_confirm_reservation(20)%></p>
+                        </div>
+                        <div class="panel-group payments-options" id="accordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                <a data-payment-method="none" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapseTwo">
+                                  <span class="dot"></span> <%=t.front_end_reservation.request_reservation%>
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2"></div>
+                          </div>
+                          <%% if (sales_process.can_pay) { %>
+                          <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-payment-method="redsys256" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapseThree">
+                                            <span class="dot"></span> <%=t.front_end_reservation.credit_card_payment(20)%>
+                                        </a>
+                                <span class="overflowed pull-right">
+                                    <!--img src="assets/img/preview/payments/mastercard-2.jpg" alt=""/>
+                                    <img src="assets/img/preview/payments/visa-2.jpg" alt=""/>
+                                    <img src="assets/img/preview/payments/american-express-2.jpg" alt=""/>
+                                    <img src="assets/img/preview/payments/discovery-2.jpg" alt=""/>
+                                    <img src="assets/img/preview/payments/eheck-2.jpg" alt=""/-->
+                                </span>
+                                    </h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3"></div>
+                          </div>
+                          <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="heading4">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-payment-method="paypal_standard" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                            <span class="dot"></span> <%=t.front_end_reservation.paypal_payment(20)%>
+                                        </a>
+                                        <span class="overflowed pull-right">
+                                           <!--img src="assets/img/preview/payments/paypal-2.jpg" alt=""/-->
+                                        </span>
+                                    </h4>
+                                </div>
+                                <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4"></div>
+                          </div>
+                          <%% } %>
+                        </div>
+</script> 
+
+
