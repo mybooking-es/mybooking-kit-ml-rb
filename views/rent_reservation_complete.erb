@@ -38,37 +38,37 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input name="customer_name" id="customer_name" title="<%=t.front_end_reservation.field_customer_name_mandatory%>" data-toggle="tooltip"
-                                                class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_name%>:*">
+                                                class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_name%>:*" maxlength="40">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                   <div class="form-group">
                                     <input name="customer_surname" id="customer_surname" title="<%=t.front_end_reservation.field_customer_surname_mandatory%>" data-toggle="tooltip"
-                                         class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_surname%>:*">
+                                         class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_surname%>:*" maxlength="40">
                                   </div>
                                 </div>
                                 <div class="col-md-6 clearfix">
                                     <div class="form-group">
                                         <input name="customer_email" id="customer_email" title="<%=t.front_end_reservation.field_customer_email_mandatory%>" data-toggle="tooltip"
-                                                class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_email%>:*">
+                                                class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_email%>:*" maxlength="40">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                   <div class="form-group">
                                     <input name="confirm_customer_email" id="confirm_customer_email" title="<%=t.front_end_reservation.field_customer_email_mandatory%>" data-toggle="tooltip"
-                                         class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_email_confirm%>:*">
+                                         class="form-control alt" type="text" placeholder="<%=t.front_end_reservation.field_customer_email_confirm%>:*" maxlength="40">
                                   </div>
                                 </div>
                                 <div class="col-md-6 clearfix">
                                     <div class="form-group">
                                      <input name="customer_phone" class="form-control alt" type="text"
-                                            placeholder="<%=t.front_end_reservation.field_customer_main_phone_number%>:*">
+                                            placeholder="<%=t.front_end_reservation.field_customer_main_phone_number%>:*" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                       <input name="customer_mobile_phone" class="form-control alt" type="text"
-                                             placeholder="<%=t.front_end_reservation.field_customer_alternative_phone_number%>:">
+                                             placeholder="<%=t.front_end_reservation.field_customer_alternative_phone_number%>:" maxlength="15">
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
 
                         <!-- Payment -->
                         <div id="payment_detail">
-                        </div>  
+                        </div>
 
                         <!-- Reservation buttons -->
 
@@ -315,6 +315,4 @@
                           </div>
                           <%% } %>
                         </div>
-</script> 
-
-
+</script>

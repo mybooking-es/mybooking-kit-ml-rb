@@ -7,6 +7,7 @@ gem "sinatra-contrib", "1.4.7"
 gem "sinatra-partial", "1.0.0"
 gem "sinatra-r18n"
 
+
 group :development do
   # Capistrano
   gem 'capistrano', '~> 3.3.0'
@@ -14,4 +15,8 @@ group :development do
   gem 'capistrano-bundler'
   gem 'sshkit-sudo'
   gem 'capistrano3-unicorn'
+end
+
+group :production do
+  gem 'unicorn'
 end
