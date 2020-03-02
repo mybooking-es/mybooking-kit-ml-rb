@@ -151,7 +151,7 @@
         <div class="col-md-8">
           <div>
             <div class="item">
-              <img class="img-responsive" src="<%%=product.full_photo%>" alt=""/>
+              <img class="img-responsive" src="<%%=shopping_cart.items[0].photo_full%>" alt=""/>
             </div>
           </div>
         </div>
@@ -160,9 +160,9 @@
              <div class="list">
                 <ul>
                   <li class="title">
-                    <h2><%%=product.name%></h2>
+                    <h2><%%=shopping_cart.items[0].item_description_customer_translation%></h2>
                   </li>
-                  <%%=product.description%>
+                  <%%=shopping_cart.items[0].item_full_description_customer_translation%>
                 </ul>
              </div>
              <div class="price">

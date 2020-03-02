@@ -70,8 +70,15 @@ require(['jquery', 'YSDRemoteDataSource','YSDSelectSelector','/js/common.js',
          url += '/' + freeAccessId;
        }
 
+       var urlParams = [];
+
        if (model.requestLanguage != null) {
-           url += '?lang=' + model.requestLanguage;
+          urlParams.push('lang=' + model.requestLanguage);
+       }
+       urlParams.push('include_extras=true');
+       if (urlParams.length > 0) {
+        url += '?';
+        url += urlParams.join('&');
        }
 
        // Action to the URL

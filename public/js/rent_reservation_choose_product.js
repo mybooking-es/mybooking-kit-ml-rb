@@ -137,8 +137,15 @@ require(['jquery', 'YSDRemoteDataSource','YSDSelectSelector','/js/common.js',
          url += '/' + freeAccessId;
        }
 
+       var urlParams = [];
+
        if (model.requestLanguage != null) {
-          url += '?lang=' + model.requestLanguage;
+          urlParams.push('lang=' + model.requestLanguage);
+       }
+       urlParams.push('include_products=true');
+       if (urlParams.length > 0) {
+        url += '?';
+        url += urlParams.join('&');
        }
 
        if (this.isShoppingCartData()) { // create or update shopping cart
