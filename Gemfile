@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.4.1'
 
 gem "sinatra", "1.4.8"
 gem "sinatra-contrib", "1.4.7"
@@ -20,3 +20,6 @@ end
 group :production do
   gem 'unicorn'
 end
+
+gem "rake", ">= 12.3.3"
+

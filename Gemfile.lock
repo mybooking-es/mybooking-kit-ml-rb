@@ -30,7 +30,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     raindrops (0.19.0)
-    rake (12.3.2)
+    rake (13.0.1)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -65,6 +65,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rvm
   capistrano3-unicorn
+  rake (>= 12.3.3)
   sinatra (= 1.4.8)
   sinatra-contrib (= 1.4.7)
   sinatra-partial (= 1.0.0)
@@ -73,7 +74,7 @@ DEPENDENCIES
   unicorn
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
